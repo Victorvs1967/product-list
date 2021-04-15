@@ -5,7 +5,7 @@
     <span>{{ item.price | currency }}</span>
 </div>
 
-<form [formGroup]="checkoutForm"
+<form *ngIf="items.length" [formGroup]="checkoutForm"
         (ngSubmit)="onSubmit(checkoutForm.value)">
     <div>
         <label>Name</label>

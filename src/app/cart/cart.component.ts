@@ -26,8 +26,10 @@ export class CartComponent implements OnInit {
   }
 
   onSubmit(customerData) {
-    console.warn('Your order was been submited', customerData);
-    this.items = this.cartService.clearCart();
-    this.checkoutForm.reset();
+    if (customerData.name && customerData.address) {
+      console.warn('Your order was been submited', customerData);
+      this.items = this.cartService.clearCart();
+      this.checkoutForm.reset();
+    }
   }
 }
