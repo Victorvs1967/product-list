@@ -85,7 +85,7 @@ label {
     background-color: white;
     color: #1976d2;
 }
-.fancy-button i.material-icons {
+.fancy-button em.material-icons {
     color: #1976d2;
     padding-right: 4px;
 }
