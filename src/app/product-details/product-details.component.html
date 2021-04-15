@@ -1,7 +1,14 @@
 <h2>Product Details</h2>
-<div *ngIf="product">
-    <h3>{{ product.name }}</h3>
-    <h4>{{ product.price | currency }}</h4>
-    <p>{{ product.description }}</p>
-    <button (click)="addToCart(product)">Buy</button>
-</div>
+<mat-card class="product-card">
+    <mat-card-header>
+        <h3>{{ product.name }}</h3>
+    </mat-card-header>
+    <hr>
+    <mat-card-content *ngIf="product">
+        <h4>{{ product.price | currency }}</h4>
+        <p>{{ product.description }}</p>
+    </mat-card-content>
+    <mat-card-actions class="card-action">
+        <button (click)="addToCart(product)">Buy</button>
+    </mat-card-actions>
+</mat-card>

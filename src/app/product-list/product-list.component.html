@@ -1,13 +1,20 @@
 <h2>Products</h2>
-<div *ngFor="let product of products; index as productId">
-    <h3>
-        <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
-            {{ product.name }}
-        </a>
-    </h3>
-    <p *ngIf="product.description">
-        Description: {{ product.description }}
-    </p>
-    <button title="Share product" (click)="share()">Share</button>
-    <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
-</div>
+
+<mat-card class="product-card" *ngFor="let product of products; index as productId">
+    <mat-card-header>
+        <h3>
+            <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+                {{ product.name }}
+            </a>
+        </h3>
+    </mat-card-header>
+    <mat-card-content>
+        <p *ngIf="product.description">
+            Description: {{ product.description }}
+        </p>
+    </mat-card-content>
+    <mat-card-actions class="card-action">
+        <button title="Share product" (click)="share()">Share</button>
+        <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
+    </mat-card-actions>
+</mat-card>    
